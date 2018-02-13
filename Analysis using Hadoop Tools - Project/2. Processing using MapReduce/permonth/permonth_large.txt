@@ -1,0 +1,9 @@
+2014-10	/xmlrpc.php
+2014-11	/xmlrpc.php
+2014-12	/xmlrpc.php
+2015-01	/xmlrpc.php
+2015-02	/xmlrpc.php
+2015-03	/xmlrpc.php
+2015-04	/xmlrpc.php
+2015-05	/xmlrpc.php
+2015-06	/wp-admin/admin-ajax.php

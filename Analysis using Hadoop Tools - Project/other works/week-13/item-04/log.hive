@@ -1,0 +1,49 @@
+
+# import
+sqoop create-hive-table \
+--connect jdbc:mysql://localhost/pradeep \
+--username vagrant \
+-P
+--table large_log \
+--hive-import \
+--hive-table large_log \
+-m 1
+
+
+#small log- per month 
+SELECT each_year, each_month, most_visited_url, MAX(number_of_visitors) AS number_of_visitors
+FROM (SELECT year(dates) AS each_year, month(dates) AS each_month, cs_uri_stem AS most_visited_url, count(cs_uri_stem) AS number_of_visitors
+FROM large_log
+where cs_uri_stem NOT LIKE '/' and cs_uri_stem NOT LIKE '%index%' and sc_status like '200'
+) AS inner
+GROUP BY each_year, each_month;
+
+
+#large log- per month 
+SELECT each_year, each_month, most_visited_url, MAX(number_of_visitors) AS number_of_visitors
+FROM (SELECT year(dates) AS each_year, month(dates) AS each_month, cs_uri_stem AS most_visited_url, count(cs_uri_stem) AS number_of_visitors
+FROM large_log
+where cs_uri_stem NOT LIKE '/' and cs_uri_stem NOT LIKE '%index%' and sc_status like '200'
+) AS inner
+GROUP BY each_year, each_month;
+
+
+
+#small log- per day 
+SELECT each_year, each_month, most_visited_url, MAX(number_of_visitors) AS number_of_visitors
+FROM (SELECT year(dates) AS each_year, cs_uri_stem AS most_visited_url, count(cs_uri_stem) AS number_of_visitors
+FROM large_log
+where cs_uri_stem NOT LIKE '/' and cs_uri_stem NOT LIKE '%index%' and sc_status like '200'
+) AS inner
+GROUP BY each_year;
+
+
+#large log- per day 
+SELECT each_year, , most_visited_url, MAX(number_of_visitors) AS number_of_visitors
+FROM (SELECT year(dates) AS each_year, cs_uri_stem AS most_visited_url, count(cs_uri_stem) AS number_of_visitors
+FROM large_log
+where cs_uri_stem NOT LIKE '/' and cs_uri_stem NOT LIKE '%index%' and sc_status like '200'
+) AS inner
+GROUP BY each_year;
+
+

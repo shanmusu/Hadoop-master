@@ -1,0 +1,2 @@
+2016-08	/xmlrpc.php
+2016-09	/xmlrpc.php

@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Apr 29 17:30:49 CDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-015b-bbd6-834e-00000449e430 
+on database directory /vagrant_data/pmohan3/itmd521/week-13/item-03/large log table/metastore_db with class loader sun.misc.Launcher$AppClassLoader@e6ea0c6 
+Loaded from file:/home/vagrant/hive/lib/derby-10.10.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_121-8u121-b13-0ubuntu1.16.04.2-b13
+user.dir=/vagrant_data/pmohan3/itmd521/week-13/item-03/large log table
+os.name=Linux
+os.arch=amd64
+os.version=4.4.0-75-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
